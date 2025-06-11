@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Registro Simple</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .registro {
+      background-color: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      width: 300px;
+    }
+
+    .registro h2 {
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .registro input {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .registro button {
+      width: 100%;
+      padding: 10px;
+      background-color: black;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .registro button:hover {
+      background-color: black;
+    }
+
+    .mensaje {
+      display: none;
+      text-align: center;
+      font-size: 1.2em;
+      color: black;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="registro" id="formRegistro">
+    <h2>Registrarse</h2>
+    <input type="text" placeholder="Nombre completo" required />
+    <input type="email" placeholder="Correo electrónico" required />
+    <input type="password" placeholder="Contraseña" required />
+    <button onclick="registrar()">Registrarse</button>
+  </div>
+
+  <div class="mensaje" id="mensajeExito">
+    ¡Registro exitoso!
+  </div>
+
+  <script>
+    function registrar() {
+      // Oculta el formulario y muestra mensaje
+      document.getElementById("formRegistro").style.display = "none";
+      document.getElementById("mensajeExito").style.display = "block";
+
+      // Redirige después de 2 segundos
+      setTimeout(function() {
+        window.location.href = "index axel.html"; // Cambia esto por el nombre de tu archivo
+      }, 2000);
+    }
+  </script>
+
+</body>
+</html>
+<form>

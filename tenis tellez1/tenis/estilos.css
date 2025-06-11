@@ -1,0 +1,128 @@
+* { 
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  color: #9ca3af;
+  background-color: #ffebe0; /* Azul bajito */
+}
+
+header {
+  background-color: #7fd6ed; /* Rojo bajito */
+  border-bottom: 1px solid #f1f5f9;
+  padding: 1em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo img {
+  height: 50px;
+  vertical-align: middle;
+}
+
+.logo h1 {
+  display: inline-block;
+  margin-left: 10px;
+  font-size: 1.5em;
+  color: #cc0000; /* rojo para el título */
+}
+
+.eslogan {
+  font-style: italic;
+  color: #cc0000; /* rojo para el eslogan */
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1em;
+}
+
+nav a {
+  text-decoration: none;
+  color: #3afd8e;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #6b7280;
+}
+
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2em;
+  background-color: #a1aeae; /* Azul bajito */
+}
+
+.hero img {
+  max-width: 50%;
+  border-radius: 10px;
+}
+
+.texto-hero h2 {
+  font-size: 2em;
+  color: #f52100;
+}
+
+.boton {
+  display: inline-block;
+  margin-top: 1em;
+  padding: 0.5em 1em;
+  background-color: #ffe4e6; /* Rojo bajito */
+  color: #6b7280;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.boton:hover {
+  background-color: #fecdd3; /* Rojo un poco más fuerte */
+}
+
+.productos {
+  padding: 2em;
+  text-align: center;
+}
+
+.galeria {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2em;
+  margin-top: 1em;
+}
+
+.producto img {
+  width: 150px;
+  height: auto;
+  border: 1px solid #e5e7eb;
+  border-radius: 5px;
+  background-color: white;
+  padding: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.03);
+}
+
+footer {
+  background-color: #7fd6ed; /* Rojo bajito */
+  color: #9ca3af;
+  text-align: center;
+  padding: 1em;
+  margin-top: 2em;
+}
+
+.redes a {
+  color: #ff0011;
+  text-decoration: none;
+  margin: 0 0.5em;
+  transition: color 0.3s;
+}
+
+.redes a:hover {
+  color: #60a5fa; /* Azul suave para hover */
+}

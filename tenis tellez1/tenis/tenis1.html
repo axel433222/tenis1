@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Catálogo de Tenis</title>
+  <link rel="stylesheet" href="estilos2.css">
+  <style>
+    .catalogo {
+      display: none;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .producto {
+      border: 1px solid #ccc;
+      padding: 10px;
+      width: 200px;
+    }
+    .producto img {
+      width: 100%;
+    }
+    #carrito {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      width: 300px;
+      background: white;
+      border: 1px solid #aaa;
+      padding: 10px;
+      display: none;
+      z-index: 1000;
+    }
+    #carritoToggle {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      background: orange;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+      z-index: 1100;
+    }
+    .notificacion {
+      background: red;
+      color: white;
+      border-radius: 50%;
+      padding: 3px 7px;
+      font-size: 12px;
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+    #historial {
+      margin-top: 30px;
+    }
+    footer {
+      margin-top: 50px;
+      text-align: center;
+      padding: 20px;
+      background-color: #f0f0f0;
+    }
+    footer a {
+      margin: 0 10px;
+      text-decoration: none;
+      font-weight: bold;
+      color: #333;
+    }
+    footer p {
+      margin: 5px 0;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Catálogo de Balones Deportivos</h1>
+
+  <button id="carritoToggle">
+    🛒 <span id="contador" class="notificacion">0</span>
+  </button>
+
+  <div class="botones">
+    <button onclick="mostrarTodos()">Todos los productos</button>
+    <button onclick="mostrarCatalogo('nuevo')">Lo más nuevo</button>
+    <button onclick="mostrarCatalogo('hombre')">Tenis para hombre</button>
+    <button onclick="mostrarCatalogo('mujer')">Tenis para mujer/a</button>
+    <button onclick="mostrarCatalogo('niño/a')">Tenis para niño/a</button>
+  </div>
+
+  <!-- CATÁLOGO DE PRODUCTOS -->
+  <div id="nuevo" class="catalogo">
+    <div class="producto">
+      <img src="imagen1.jpeg" alt="Nike Mercurial Vapor 16 Elite x Air Max 95 SE">
+      <h3>Nike Mercurial Vapor 16 Elite x Air Max 95 SE</h3>
+      <p>Precio: $8500</p>
+      <button onclick="agregarAlCarrito('Nike Mercurial Vapor 16 Elite x Air Max 95 SE', 8500)">Agregar al carrito</button>
+    </div>
+    <div class="producto">
+      <img src="imagen2.jpeg" alt="Jumpman MVP">
+      <h3>Jumpman MVP</h3>
+      <p>Precio: $3850</p>
+      <button onclick="agregarAlCarrito('Jumpman MVP', 3850)">Agregar al carrito</button>
+    </div>
+    <div class="producto">
+      <img src="imagen3.jpeg" alt="Nike V2K Run">
+      <h3>Nike V2K Run</h3>
+      <p>Precio: $1880</p>
+      <button onclick="agregarAlCarrito('Nike V2K Run', 1880)">Agregar al carrito</button>
+    </div>
+  </div>
+
+  <div id="hombre" class="catalogo">
+    <div class="producto">
+      <img src="imagen4.jpeg" alt="Nike Dunk Low Retro">
+      <h3>Nike Dunk Low Retro</h3>
+      <p>Precio: $2500</p>
+      <button onclick="agregarAlCarrito('Nike Dunk Low Retro', 2500)">Agregar al carrito</button>
+    </div>
+    <div class="producto">
+      <img src="imagen5.jpeg" alt="Nike Dunk Low">
+      <h3>Nike Dunk Low</h3>
+      <p>Precio: $2850</p>
+      <button onclick="agregarAlCarrito('Nike Dunk Low', 2850)">Agregar al carrito</button>
+    </div>
+    <div class="producto">
+      <img src="imagen6.jpeg" alt="Nike V5 RNR">
+      <h3>Nike V5 RNR</h3>
+      <p>Precio: $2880</p>
+      <button onclick="agregarAlCarrito('Nike V5 RNR', 2880)">Agregar al carrito</button>
+    </div>
+  </div>
+
+  <div id="mujer" class="catalogo">
+    <div class="producto">
+      <img src="imagen7.jpeg" alt="Air Jordan 1 Mid SE">
+      <h3>Air Jordan 1 Mid SE</h3>
+      <p>Precio: $3390</p>
+      <button onclick="agregarAlCarrito('Air Jordan 1 Mid SE', 3390)">Agregar al carrito</button>
+    </div>
+    <div class="producto">
+      <img src="imagen8.jpeg" alt="Nike Dunk Low Next Nature">
+      <h3>Nike Dunk Low Next Nature</h3>
+      <p>Precio: $2599</p>
+      <button onclick="agregarAlCarrito('Nike Dunk Low Next Nature', 2599)">Agregar al carrito</button>
+    </div>
+    <div class="producto">
+      <img src="imagen9.jpeg" alt="Nike Blazer Mid">
+      <h3>Nike Blazer Mid</h3>
+      <p>Precio: $1799</p>
+      <button onclick="agregarAlCarrito('Nike Blazer Mid', 1799)">Agregar al carrito</button>
+    </div>
+  </div>
+
+  <div id="niño/a" class="catalogo">
+    <div class="producto">
+      <img src="imagen10.jpeg" alt="Air Jordan 1 High OG">
+      <h3>Air Jordan 1 High OG</h3>
+      <p>Precio: $3099</p>
+      <button onclick="agregarAlCarrito('Air Jordan 1 High OG', 3099)">Agregar al carrito</button>
+    </div>
+    <div class="producto">
+      <img src="imagen11.jpeg" alt="Air Jordan 1 Low SE">
+      <h3>Air Jordan 1 Low SE</h3>
+      <p>Precio: $2920</p>
+      <button onclick="agregarAlCarrito('Air Jordan 1 Low SE',
+       2920)">Agregar al carrito</button>
+    </div>
+    <div class="producto">
+      <img src="imagen12.jpeg" alt="Jordan CMFT Era">
+      <h3>Jordan CMFT Era</h3>
+      <p>Precio: $1799</p>
+      <button onclick="agregarAlCarrito('Jordan CMFT Era', 1799)">Agregar al carrito</button>
+    </div>
+  </div>
+
+  <!-- CARRITO -->
+  <div id="carrito">
+    <h3>Carrito de Compras</h3>
+    <ul id="lista-carrito"></ul>
+    <p>Total: $<span id="total">0</span></p>
+    <form id="formPago">
+  <h3>Método de Pago</h3>
+  <label>
+    <input type="radio" name="metodoPago" value="Tarjeta de crédito" checked>
+    Tarjeta de crédito
+  </label>
+  <label>
+    <input type="radio" name="metodoPago" value="PayPal">
+    PayPal
+  </label>
+  <label>
+    <input type="radio" name="metodoPago" value="Transferencia bancaria">
+    Transferencia bancaria
+  </label>
+  <button type="submit">Realizar Pago</button>
+</form>
+ <button onclick="realizarCompra()">Comprar</button>
+    <button onclick="cerrarCarrito()">Cerrar</button>
+  </div>
+
+  <!-- HISTORIAL -->
+  <h2>Historial de Compras</h2>
+  <ul id="historial"></ul>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>Síguenos en nuestras redes sociales:</p>
+    <a href="https://www.facebook.com/share/1C3jBcNLr8/"_blank">📘 Facebook</a>
+    <a href="https://www.instagram.com/sneakers_lexxus?igsh=MWllcW5tODUwM3FmdA==" target="_blank">📸 Instagram</a>
+    <p>Teléfono: 2941998597</p>
+    <p>Dirección: Santiago tuxtla ver, calle: El marquez</p>
+  </footer>
+
+  <!-- SCRIPT -->
+  <script>
+    let carrito = [];
+
+    function ocultarTodos() {
+      document.querySelectorAll('.catalogo').forEach(el => el.style.display = 'none');
+    }
+
+    function mostrarCatalogo(categoria) {
+      ocultarTodos();
+      document.getElementById(categoria).style.display = 'flex';
+    }
+
+    function mostrarTodos() {
+      document.querySelectorAll('.catalogo').forEach(el => el.style.display = 'flex');
+    }
+
+    function agregarAlCarrito(nombre, precio) {
+      carrito.push({ nombre, precio });
+      actualizarCarrito();
+    }
+
+    function actualizarCarrito() {
+      const lista = document.getElementById('lista-carrito');
+      lista.innerHTML = '';
+      let total = 0;
+
+      carrito.forEach((item, index) => {
+        const li = document.createElement('li');
+        li.innerHTML = `${item.nombre} - $${item.precio} <button onclick="eliminarDelCarrito(${index})">Eliminar</button>`;
+        lista.appendChild(li);
+        total += item.precio;
+      });
+
+      document.getElementById('total').textContent = total;
+      document.getElementById('contador').textContent = carrito.length;
+    }
+
+    function eliminarDelCarrito(index) {
+      carrito.splice(index, 1);
+      actualizarCarrito();
+    }
+
+    function realizarCompra() {
+      if (carrito.length === 0) return alert('El carrito está vacío.');
+
+      const historial = document.getElementById('historial');
+      carrito.forEach(item => {
+        const li = document.createElement('li');
+        li.textContent = `${item.nombre} - $${item.precio}`;
+        historial.appendChild(li);
+      });
+
+      carrito = [];
+      actualizarCarrito();
+      alert('¡Compra realizada con éxito!');
+    }
+
+    document.getElementById('carritoToggle').addEventListener('click', () => {
+      const carritoDiv = document.getElementById('carrito');
+      carritoDiv.style.display = carritoDiv.style.display === 'block' ? 'none' : 'block';
+    });
+
+    function cerrarCarrito() {
+      document.getElementById('carrito').style.display = 'none';
+    }
+    function realizarCompra() {
+  if (carrito.length === 0) return alert('El carrito está vacío.');
+
+  const metodoSeleccionado = document.querySelector('input[name="metodoPago"]:checked').value;
+
+  const historial = document.getElementById('historial');
+  carrito.forEach(item => {
+    const li = document.createElement('li');
+    li.textContent = `${item.nombre} - $${item.precio} - Pago: ${metodoSeleccionado}`;
+    historial.appendChild(li);
+  });
+
+  carrito = [];
+  actualizarCarrito();
+  alert(`¡Compra realizada con éxito usando ${metodoSeleccionado}!`);
+}
+
+
+    // MOSTRAR TODOS LOS PRODUCTOS AL CARGAR LA PÁGINA
+    window.onload = () => mostrarTodos();
+  </script>
+</body>
+</html>
